@@ -1,0 +1,4 @@
+{"cpu_time": 0, "total_cpu_time": null, "wallclock_time": 0.00010752677917480469, "evaluations": 0, "cost": 2147483648, "incumbent": ["C='1.0'", "random_state='42'", "solver=''liblinear''"]}
+{"cpu_time": 0.3453066349029541, "total_cpu_time": null, "wallclock_time": 0.3590855598449707, "evaluations": 1, "cost": 0.11823200054410565, "incumbent": ["C='1.0'", "random_state='42'", "solver=''liblinear''"]}
+{"cpu_time": 1.8220958709716797, "total_cpu_time": null, "wallclock_time": 2.183501958847046, "evaluations": 6, "cost": 0.11458105822413456, "incumbent": ["C='2.3662648622702664'", "random_state='42'", "solver=''liblinear''"]}
+{"cpu_time": 2.4969539642333984, "total_cpu_time": null, "wallclock_time": 2.941046953201294, "evaluations": 8, "cost": 0.10657718990467735, "incumbent": ["C='6.395932459194361'", "random_state='42'", "solver=''liblinear''"]}

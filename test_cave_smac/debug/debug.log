@@ -1,0 +1,23 @@
+DEBUG:cave.cavefacade.CAVE:Output-dir 'test_cave_smac' was already created, call ignored
+DEBUG:cave.cavefacade.CAVE:Running CAVE version 1.1.8
+DEBUG:cave.cavefacade.CAVE:Folders: ['smac_output/run_1']; ta-exec-dirs: ['.']
+DEBUG:cave.cavefacade.CAVE:Collecting data from smac_output/run_1.
+DEBUG:cave.ConfiguratorRun.smac_output/run_1:Loading from 'smac_output/run_1' with ta_exec_dir '.'.
+DEBUG:cave.reader:Creating scenario from '.'
+DEBUG:smac.utils.io.cmd_reader.CMDReader:Deactivate output directory.
+DEBUG:smac.scenario.scenario.Scenario:SMAC and Scenario Options:
+WARNING:cave.cavefacade.CAVE:Folder smac_output/run_1 could with ta_exec_dir . not be loaded, failed with error message: Trying to set illegal value '42' (type '<class 'int'>') for hyperparameter 'random_state, Type: Categorical, Choices: {42}, Default: 42' (default-value has type '<class 'str'>').
+ERROR:cave.cavefacade.CAVE:Trying to set illegal value '42' (type '<class 'int'>') for hyperparameter 'random_state, Type: Categorical, Choices: {42}, Default: 42' (default-value has type '<class 'str'>').
+Traceback (most recent call last):
+  File "/home/ubuntu/anaconda3/envs/sandbox_env/lib/python3.6/site-packages/cave/cavefacade.py", line 248, in __init__
+    validation_format=validation_format))
+  File "/home/ubuntu/anaconda3/envs/sandbox_env/lib/python3.6/site-packages/cave/reader/configurator_run.py", line 70, in __init__
+    self.original_runhistory = self.reader.get_runhistory(self.scen.cs)
+  File "/home/ubuntu/anaconda3/envs/sandbox_env/lib/python3.6/site-packages/cave/reader/smac3_reader.py", line 55, in get_runhistory
+    rh.load_json(rh_fn, cs)
+  File "/home/ubuntu/anaconda3/envs/sandbox_env/lib/python3.6/site-packages/smac/runhistory/runhistory.py", line 404, in load_json
+    ) for id_, values in all_data["configs"].items()
+  File "/home/ubuntu/anaconda3/envs/sandbox_env/lib/python3.6/site-packages/smac/runhistory/runhistory.py", line 404, in <dictcomp>
+    ) for id_, values in all_data["configs"].items()
+  File "ConfigSpace/configuration_space.pyx", line 1370, in ConfigSpace.configuration_space.Configuration.__init__
+ValueError: Trying to set illegal value '42' (type '<class 'int'>') for hyperparameter 'random_state, Type: Categorical, Choices: {42}, Default: 42' (default-value has type '<class 'str'>').
