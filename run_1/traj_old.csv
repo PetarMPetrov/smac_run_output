@@ -1,5 +1,0 @@
-"CPU Time Used","Estimated Training Performance","Wallclock Time","Incumbent ID","Automatic Configurator (CPU) Time","Configuration..."
-0.000000, 2147483648.000000, 0.000108, 1, 0.000108, C='1.0', random_state='42', solver=''liblinear''
-0.345307, 0.118232, 0.359086, 1, 0.013779, C='1.0', random_state='42', solver=''liblinear''
-1.822096, 0.114581, 2.183502, 2, 0.361406, C='2.3662648622702664', random_state='42', solver=''liblinear''
-2.496954, 0.106577, 2.941047, 3, 0.444093, C='6.395932459194361', random_state='42', solver=''liblinear''

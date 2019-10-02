@@ -1,3 +1,0 @@
-C real [0.03, 10.0] [1.0]log
-random_state categorical {42} [42]
-solver categorical {liblinear} [liblinear]
