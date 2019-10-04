@@ -6,18 +6,907 @@ DEBUG:cave.ConfiguratorRun.smac_output/run_1:Loading from 'smac_output/run_1' wi
 DEBUG:cave.reader:Creating scenario from '.'
 DEBUG:smac.utils.io.cmd_reader.CMDReader:Deactivate output directory.
 DEBUG:smac.scenario.scenario.Scenario:SMAC and Scenario Options:
-WARNING:cave.cavefacade.CAVE:Folder smac_output/run_1 could with ta_exec_dir . not be loaded, failed with error message: Trying to set illegal value '42' (type '<class 'int'>') for hyperparameter 'random_state, Type: Categorical, Choices: {42}, Default: 42' (default-value has type '<class 'str'>').
-ERROR:cave.cavefacade.CAVE:Trying to set illegal value '42' (type '<class 'int'>') for hyperparameter 'random_state, Type: Categorical, Choices: {42}, Default: 42' (default-value has type '<class 'str'>').
-Traceback (most recent call last):
-  File "/home/ubuntu/anaconda3/envs/sandbox_env/lib/python3.6/site-packages/cave/cavefacade.py", line 248, in __init__
-    validation_format=validation_format))
-  File "/home/ubuntu/anaconda3/envs/sandbox_env/lib/python3.6/site-packages/cave/reader/configurator_run.py", line 70, in __init__
-    self.original_runhistory = self.reader.get_runhistory(self.scen.cs)
-  File "/home/ubuntu/anaconda3/envs/sandbox_env/lib/python3.6/site-packages/cave/reader/smac3_reader.py", line 55, in get_runhistory
-    rh.load_json(rh_fn, cs)
-  File "/home/ubuntu/anaconda3/envs/sandbox_env/lib/python3.6/site-packages/smac/runhistory/runhistory.py", line 404, in load_json
-    ) for id_, values in all_data["configs"].items()
-  File "/home/ubuntu/anaconda3/envs/sandbox_env/lib/python3.6/site-packages/smac/runhistory/runhistory.py", line 404, in <dictcomp>
-    ) for id_, values in all_data["configs"].items()
-  File "ConfigSpace/configuration_space.pyx", line 1370, in ConfigSpace.configuration_space.Configuration.__init__
-ValueError: Trying to set illegal value '42' (type '<class 'int'>') for hyperparameter 'random_state, Type: Categorical, Choices: {42}, Default: 42' (default-value has type '<class 'str'>').
+DEBUG:cave.reader.configurator_run.ConfiguratorRun:No rng and no run_id given: using a random value to initialize run_id.
+INFO:cave.reader.configurator_run.ConfiguratorRun:Optimizing a deterministic scenario for quality without a tuner timeout - will make SMAC deterministic and only evaluate one configuration per iteration!
+INFO:smac.scenario.scenario.Scenario:No output directory for scenario logging specified -- scenario will not be logged.
+INFO:smac.utils.io.traj_logging.TrajLogger:No output directory for trajectory logging specified -- trajectory will not be logged.
+INFO:smac.initial_design.default_configuration_design.DefaultConfiguration:Running initial design for 1 configurations
+DEBUG:cave.cavefacade.CAVE:Instances: train=0, test=0, train-features=0, test-features=0
+INFO:cave.cavefacade.CAVE:No features available. Skipping feature analysis.
+DEBUG:cave.cavefacade.CAVE:Update original rh with all available rhs!
+DEBUG:cave.cavefacade.CAVE:Using 'test_cave_smac/content' as output for pimp
+DEBUG:pimp.Importance:None
+DEBUG:pimp.Importance:<smac.runhistory.runhistory.RunHistory object at 0x7facef5c35c0>
+INFO:pimp.Importance:Combined number of Runhistory data points: 50
+INFO:pimp.Importance:Number of Configurations: 50
+INFO:pimp.Importance:Converting Data and constructing Model
+DEBUG:pimp.Importance:Counted 3 hyperparameters
+INFO:pimp.Importance:Using model <pimp.epm.base_epm.RandomForestWithInstances object at 0x7facef534be0>
+DEBUG:smac.runhistory.runhistory2epm.RunHistory2EPM4Cost:Transform runhistory into X,y format
+DEBUG:smac.runhistory.runhistory2epm.RunHistory2EPM4Cost:Converted 50 observations
+INFO:pimp.Importance:Size of training X: (50, 3)
+INFO:pimp.Importance:Size of training y: (50, 1)
+INFO:pimp.Importance:Data was not imputed
+INFO:pimp.Importance:Thus the size of X might be smaller than the datapoints in the RunHistory
+INFO:pimp.Importance:Fitting Model
+INFO:pimp.Importance:Best incumbent found in None
+DEBUG:smac.utils.validate.Validator:no seed given, using default seed of 1
+DEBUG:cave.cavefacade.CAVE:Validating smac_output/run_1 using epm!
+DEBUG:smac.utils.validate.Validator:Gathered 2 configurations for mode def+inc.
+INFO:smac.utils.validate.Validator:Collected 0 runs from 2 configurations on 1 instances with 1 repetitions. Reusing 2 runs from given runhistory.
+DEBUG:smac.utils.validate.Validator:Predicting desired 0 runs, data has shape (0, 3)
+DEBUG:cave.timer:func:'_validate_default_and_incumbents' took: 0.0005 sec (human-friendly: 0 h /0 m /0 s)
+DEBUG:cave.cavefacade.CAVE:Combined number of RunHistory data points for original runhistory: 50 # Configurations: 50. # Configurator runs: 1
+DEBUG:cave.cavefacade.CAVE:Combined number of RunHistory data points for validated runhistory: 50 # Configurations: 50. # Configurator runs: 1
+DEBUG:cave.cavefacade.CAVE:Combined number of RunHistory data points for epm runhistory: 50 # Configurations: 50. # Configurator runs: 1
+DEBUG:cave.cavefacade.CAVE:Overall best run: smac_output/run_1, with incumbent: Configuration:
+  C, Value: 6.395932459194361
+  random_state, Value: 42
+  solver, Value: 'liblinear'
+
+DEBUG:cave.cavefacade.CAVE:Using aggregated cave-instance
+DEBUG:cave.cavefacade.CAVE:Args: (), Kwargs: {}
+DEBUG:cave.analyzer.overview_table.OverviewTable:bohb_parallel in overview: 0
+DEBUG:HTMLBuilder:No content for Best Configuration, skipping in html-generation
+DEBUG:HTMLBuilder:No content for Performance Analysis, skipping in html-generation
+DEBUG:HTMLBuilder:No content for Configurators Behavior, skipping in html-generation
+DEBUG:HTMLBuilder:No content for Parameter Importance, skipping in html-generation
+DEBUG:HTMLBuilder:No content for Feature Analysis, skipping in html-generation
+DEBUG:HTMLBuilder:No content for BOHB Plot, skipping in html-generation
+DEBUG:cave.cavefacade.CAVE:Using aggregated cave-instance
+DEBUG:cave.cavefacade.CAVE:Args: (), Kwargs: {}
+DEBUG:HTMLBuilder:No content for Performance Analysis, skipping in html-generation
+DEBUG:HTMLBuilder:No content for Configurators Behavior, skipping in html-generation
+DEBUG:HTMLBuilder:No content for Parameter Importance, skipping in html-generation
+DEBUG:HTMLBuilder:No content for Feature Analysis, skipping in html-generation
+DEBUG:HTMLBuilder:No content for BOHB Plot, skipping in html-generation
+DEBUG:cave.cavefacade.CAVE:Using aggregated cave-instance
+DEBUG:cave.cavefacade.CAVE:Args: (), Kwargs: {}
+DEBUG:cave.analyzer.performance_table.PerformanceTable:Calculating oracle performance
+DEBUG:cave.timer:func:'get_oracle' took: 0.0037 sec (human-friendly: 0 h /0 m /0 s)
+INFO:cave.analyzer.performance_table.PerformanceTable:... create performance table
+INFO:cave.analyzer.performance_table.PerformanceTable:Calculating penalized average runtime without cutoff...
+INFO:cave.analyzer.performance_table.PerformanceTable:Calculating penalized average runtime without cutoff...
+DEBUG:cave.analyzer.performance_table.PerformanceTable:No par10 possible, since scenario has not specified cutoff-time
+DEBUG:cave.analyzer.performance_table.PerformanceTable:No par10 possible, since scenario has not specified cutoff-time
+INFO:cave.analyzer.performance_table.PerformanceTable:Calculating penalized average runtime without cutoff...
+DEBUG:cave.analyzer.performance_table.PerformanceTable:No par10 possible, since scenario has not specified cutoff-time
+DEBUG:cave.timer:func:'_permutation_test' took: 0.0000 sec (human-friendly: 0 h /0 m /0 s)
+DEBUG:cave.analyzer.performance_table.PerformanceTable:Permutation test with 10001/10001 permutations yielding a higher mean of difference between permutated data than the real data (0.011655), yielding a p-value of 1.000000
+DEBUG:cave.analyzer.performance_table.PerformanceTable:p-value for def/inc-difference: 1.000000 (permutation test with 10000 permutations and par 1)
+DEBUG:cave.timer:func:'_permutation_test' took: 0.4509 sec (human-friendly: 0 h /0 m /0 s)
+DEBUG:cave.analyzer.performance_table.PerformanceTable:[[0.118 0.107]]
+DEBUG:cave.analyzer.performance_table.PerformanceTable:['Default', 'Incumbent']
+DEBUG:HTMLBuilder:No content for Configurators Behavior, skipping in html-generation
+DEBUG:HTMLBuilder:No content for Parameter Importance, skipping in html-generation
+DEBUG:HTMLBuilder:No content for Feature Analysis, skipping in html-generation
+DEBUG:HTMLBuilder:No content for BOHB Plot, skipping in html-generation
+DEBUG:cave.cavefacade.CAVE:Using aggregated cave-instance
+DEBUG:cave.cavefacade.CAVE:Args: (), Kwargs: {}
+INFO:cave.analyzer.plot_ecdf.PlotECDF:... plotting eCDF
+DEBUG:cave.analyzer.plot_ecdf.PlotECDF:Plot CDF to test_cave_smac/cdf_[train|test].png
+DEBUG:cave.analyzer.plot_ecdf.PlotECDF:No train instances, skipping cdf
+DEBUG:cave.analyzer.plot_ecdf.PlotECDF:No test instances, skipping cdf
+DEBUG:HTMLBuilder:No content for Configurators Behavior, skipping in html-generation
+DEBUG:HTMLBuilder:No content for Parameter Importance, skipping in html-generation
+DEBUG:HTMLBuilder:No content for Feature Analysis, skipping in html-generation
+DEBUG:HTMLBuilder:No content for BOHB Plot, skipping in html-generation
+DEBUG:cave.cavefacade.CAVE:Using aggregated cave-instance
+DEBUG:cave.cavefacade.CAVE:Args: (), Kwargs: {}
+INFO:cave.analyzer.plot_scatter.PlotScatter:... plotting scatter
+DEBUG:cave.analyzer.plot_scatter.PlotScatter:Plot scatter to test_cave_smac/scatter_[train|test].png
+DEBUG:cave.analyzer.plot_scatter.PlotScatter:No train instances, skipping scatter
+DEBUG:cave.analyzer.plot_scatter.PlotScatter:No test instances, skipping scatter
+DEBUG:HTMLBuilder:No content for Configurators Behavior, skipping in html-generation
+DEBUG:HTMLBuilder:No content for Parameter Importance, skipping in html-generation
+DEBUG:HTMLBuilder:No content for Feature Analysis, skipping in html-generation
+DEBUG:HTMLBuilder:No content for BOHB Plot, skipping in html-generation
+INFO:cave.cavefacade.CAVE:fANOVA...
+DEBUG:cave.cavefacade.CAVE:Using aggregated cave-instance
+DEBUG:cave.cavefacade.CAVE:Args: (), Kwargs: {}
+INFO:cave.analyzer.cave_fanova.CaveFanova:... parameter importance fanova
+INFO:pimp.Importance:Running fanova
+INFO:pimp.Importance:Setting up Evaluation Method
+INFO:pimp.Importance:Using model <pimp.epm.base_epm.RandomForestWithInstances object at 0x7facef534be0>
+INFO:pimp.Importance:X shape (50, 3)
+INFO:pimp.fANOVA:No marginalization necessary
+INFO:pimp.fANOVA:Preprocessing X
+DEBUG:pimp.fANOVA:00 C                             : 1.0000
+DEBUG:pimp.fANOVA:01 random_state                  : 0.0000
+DEBUG:pimp.fANOVA:02 solver                        : 0.0000
+DEBUG:pimp.fANOVA:[0, 1, 2]
+INFO:pimp.fANOVA:00 C                             : 1.0000
+INFO:pimp.fANOVA:01 random_state                  : 0.0000
+INFO:pimp.fANOVA:02 solver                        : 0.0000
+INFO:pimp.fANOVA:Computing most important pairwise marginals using at most the 3 most important ones.
+INFO:pimp.fANOVA:-1 C <> random_state             : 0.0000
+INFO:pimp.fANOVA:-1 C <> solver                   : 0.0000
+INFO:pimp.fANOVA:-1 random_state <> solver        : 0.0000
+INFO:pimp.fANOVA:Getting Marginals!
+INFO:fanova.visualizer.Visualizer:It might be better to plot this parameter 'C' in log-scale.
+INFO:pimp.fANOVA:Plotting Pairwise-Marginals!
+INFO:fanova.visualizer.Visualizer:creating test_cave_smac/content/fanova/random_state_solver.png
+WARNING:pimp.fANOVA:Could not create pairwise plots!
+DEBUG:cave.analyzer.cave_fanova.CaveFanova:fanova-importance for C: mean (over trees): 100.000000, std: 6.007713999182917e-13
+DEBUG:cave.analyzer.cave_fanova.CaveFanova:fanova-importance for random_state: mean (over trees): 0.000000, std: 2.1596396215136065e-13
+DEBUG:cave.analyzer.cave_fanova.CaveFanova:fanova-importance for solver: mean (over trees): 0.000000, std: 2.1596396215136065e-13
+DEBUG:cave.analyzer.cave_fanova.CaveFanova:fanova-importance for ['C', 'random_state']: mean (over trees): 0.000000, std: 0.0
+DEBUG:cave.analyzer.cave_fanova.CaveFanova:fanova-importance for ['C', 'solver']: mean (over trees): 0.000000, std: 0.0
+DEBUG:cave.analyzer.cave_fanova.CaveFanova:fanova-importance for ['random_state', 'solver']: mean (over trees): 0.000000, std: 0.0
+DEBUG:HTMLBuilder:No content for Configurators Behavior, skipping in html-generation
+DEBUG:HTMLBuilder:No content for Feature Analysis, skipping in html-generation
+DEBUG:HTMLBuilder:No content for BOHB Plot, skipping in html-generation
+INFO:cave.cavefacade.CAVE:Local EPM-predictions around incumbent...
+DEBUG:cave.cavefacade.CAVE:Using aggregated cave-instance
+DEBUG:cave.cavefacade.CAVE:Args: (), Kwargs: {}
+INFO:cave.analyzer.local_parameter_importance.LocalParameterImportance:... parameter importance lpi
+INFO:pimp.Importance:Running lpi
+INFO:pimp.Importance:Setting up Evaluation Method
+INFO:pimp.Importance:Using model <pimp.epm.base_epm.RandomForestWithInstances object at 0x7facef534be0>
+INFO:pimp.Importance:X shape (50, 3)
+DEBUG:pimp.LPI:params: ['C', 'random_state', 'solver']
+INFO:pimp.LPI:Sampling neighborhood of C
+DEBUG:pimp.LPI:	inf
+INFO:pimp.LPI:--------------------------------------------------> Found 500 valid neighbors
+INFO:pimp.LPI:Sampling neighborhood of random_state
+DEBUG:pimp.LPI:	0
+DEBUG:pimp.LPI:	No neighbors!
+INFO:pimp.LPI:Sampling neighborhood of solver
+DEBUG:pimp.LPI:	0
+DEBUG:pimp.LPI:	No neighbors!
+DEBUG:pimp.LPI:overall_var_per_tree {'C': [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, nan, 1.0, nan]} (10 trees)
+DEBUG:pimp.LPI:sum_var_per_tree [0.0051904186804217455, 0.004580753434306036, 0.004921873245743926, 0.005598979650872735, 0.003916896932477066, 0.0051291546888491465, 3.0814879110195774e-33, 0.0, 7.703719777548943e-34, 0.0] (10 trees)
+DEBUG:HTMLBuilder:No content for Configurators Behavior, skipping in html-generation
+DEBUG:HTMLBuilder:No content for Feature Analysis, skipping in html-generation
+DEBUG:HTMLBuilder:No content for BOHB Plot, skipping in html-generation
+DEBUG:cave.cavefacade.CAVE:Using aggregated cave-instance
+DEBUG:cave.cavefacade.CAVE:Args: (), Kwargs: {}
+INFO:cave.analyzer.pimp_comparison_table.PimpComparisonTable:Creating pimp latex table at test_cave_smac/content/pimp.tex
+DEBUG:cave.analyzer.pimp_comparison_table.PimpComparisonTable:Sort pimp-table by average
+DEBUG:HTMLBuilder:No content for Configurators Behavior, skipping in html-generation
+DEBUG:HTMLBuilder:No content for Feature Analysis, skipping in html-generation
+DEBUG:HTMLBuilder:No content for BOHB Plot, skipping in html-generation
+DEBUG:cave.cavefacade.CAVE:Using aggregated cave-instance
+DEBUG:cave.cavefacade.CAVE:Args: (), Kwargs: {'cot_inc_traj': 'racing'}
+DEBUG:cave.analyzer.cost_over_time.CostOverTime:Initialized CostOverTime with 1 runs, output to "test_cave_smac"
+DEBUG:cave.analyzer.cost_over_time.CostOverTime:Using 4 samples (3 distinct) from trajectory.
+DEBUG:cave.analyzer.cost_over_time.CostOverTime:Using 4 samples (3 distinct) from trajectory.
+DEBUG:cave.analyzer.cost_over_time.CostOverTime:Exporting to test_cave_smac/performance_over_time.png (base: test_cave_smac)
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "phantomjs", "platformName": "any"}}, "desiredCapabilities": {"browserName": "phantomjs", "version": "", "platform": "ANY", "javascriptEnabled": true}}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session HTTP/1.1" 200 536
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/url {"url": "file:////tmp/bokeh905ec4uz.html", "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/url HTTP/1.1" 200 74
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/window/current/maximize {"windowHandle": "current", "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/window/current/maximize HTTP/1.1" 200 74
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "document.body.style.width = '100%';", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "\n            const b = window.Bokeh;\n            return b && b.documents && b.documents.length > 0;\n        ", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "\n// add private window prop to check that render is complete\nwindow._bokeh_render_complete = false;\nfunction done() {\n  window._bokeh_render_complete = true;\n}\n\nvar doc = window.Bokeh.documents[0];\n\nif (doc.is_idle)\n  done();\nelse\n  doc.idle.connect(done);\n", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "return window._bokeh_render_complete;", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/log {"type": "browser", "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/log HTTP/1.1" 200 641
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:GET http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/screenshot {"sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "GET /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/screenshot HTTP/1.1" 200 50538
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "\nreturn document.getElementsByClassName('bk-root')[0].children[0].getBoundingClientRect()\n", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 140
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'pHYs' 41 9
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 62 8192
+DEBUG:cave.analyzer.cost_over_time.CostOverTime:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37188), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.analyzer.cost_over_time.CostOverTime:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37190), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.analyzer.cost_over_time.CostOverTime:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37192), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.analyzer.cost_over_time.CostOverTime:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37194), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.analyzer.cost_over_time.CostOverTime:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37196), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.analyzer.cost_over_time.CostOverTime:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37198), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.analyzer.cost_over_time.CostOverTime:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37200), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.analyzer.cost_over_time.CostOverTime:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37202), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.analyzer.cost_over_time.CostOverTime:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37204), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.analyzer.cost_over_time.CostOverTime:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37206), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.timer:func:'export_bokeh' took: 1.8911 sec (human-friendly: 0 h /0 m /1 s)
+DEBUG:HTMLBuilder:No content for Feature Analysis, skipping in html-generation
+DEBUG:HTMLBuilder:No content for BOHB Plot, skipping in html-generation
+DEBUG:cave.cavefacade.CAVE:Using aggregated cave-instance
+DEBUG:cave.cavefacade.CAVE:Args: (), Kwargs: {'use_timeslider': False, 'max_confs': -1, 'num_quantiles': 10}
+INFO:cave.cavefacade.CAVE:... visualizing explored configspace (this may take a long time, if there is a lot of data - deactive with --no_configurator_footprint)
+INFO:cave.analyzer.configurator_footprint.ConfiguratorFootprint:... visualizing explored configspace (this may take a long time, if there is a lot of data - deactive with --no_configurator_footprint)
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:'timestamps'
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Failed to sort by timestamps... only a reason to worry if this is BOHB-analysis
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Creating 10 quantiles with a total number of runs of 50
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Ranges: [0, 1, 2, 3, 4, 7, 10, 15, 22, 33, 50]
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Labels: []
+DEBUG:cave.timer:func:'_get_runs_per_config_quantiled' took: 0.0039 sec (human-friendly: 0 h /0 m /0 s)
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Min runs per conf: 1, Max runs per conf: 1
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Gathered 50 configurations from 1 runhistories.
+DEBUG:cave.timer:func:'get_conf_matrix' took: 0.0046 sec (human-friendly: 0 h /0 m /0 s)
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Number of Configurations: 50
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Calculate distance between configurations.
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:0.00% of all distances calculated in 0.00 seconds...
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:20.00% of all distances calculated in 0.01 seconds...
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:40.00% of all distances calculated in 0.01 seconds...
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:60.00% of all distances calculated in 0.01 seconds...
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:80.00% of all distances calculated in 0.01 seconds...
+DEBUG:cave.timer:func:'get_distance' took: 0.0141 sec (human-friendly: 0 h /0 m /0 s)
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:MDS-stress: 0.048262
+DEBUG:cave.timer:func:'get_mds' took: 0.0195 sec (human-friendly: 0 h /0 m /0 s)
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Convert data for epm.
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Types: [0 1 1], Bounds: [[0 1.0]
+ [1 nan]
+ [1 nan]]
+DEBUG:smac.runhistory.runhistory2epm.RunHistory2EPM4Cost:Transform runhistory into X,y format
+DEBUG:smac.runhistory.runhistory2epm.RunHistory2EPM4Cost:Converted 50 observations
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:0 elements not in both sets, 50 elements in both sets, X (len 0) and conf_dict (len 50) (might be a problem related to forbidden clauses?)
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Train random forest for contour-plot. Shape of X: (50, 3), shape of X_trans: (50, 2)
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Faking configspace to be able to train rf...
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Fitting random forest took 0.000868 time
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:x_min: -1.362969, x_max: 1.611440, y_min: -1.188834, y_max: 1.087926
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Predict on 180 samples in grid to get surface (step-size: 0.200000)
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Predicting random forest took 0.023523 time
+DEBUG:cave.timer:func:'get_pred_surface' took: 0.0479 sec (human-friendly: 0 h /0 m /0 s)
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Convert data for epm.
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Types: [0 1 1], Bounds: [[0 1.0]
+ [1 nan]
+ [1 nan]]
+DEBUG:smac.runhistory.runhistory2epm.RunHistory2EPM4Cost:Transform runhistory into X,y format
+DEBUG:smac.runhistory.runhistory2epm.RunHistory2EPM4Cost:Converted 50 observations
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:0 elements not in both sets, 50 elements in both sets, X (len 0) and conf_dict (len 50) (might be a problem related to forbidden clauses?)
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Train random forest for contour-plot. Shape of X: (50, 3), shape of X_trans: (50, 2)
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Faking configspace to be able to train rf...
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Fitting random forest took 0.000798 time
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:x_min: -1.362969, x_max: 1.611440, y_min: -1.188834, y_max: 1.087926
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Predict on 180 samples in grid to get surface (step-size: 0.200000)
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Predicting random forest took 0.024006 time
+DEBUG:cave.timer:func:'get_pred_surface' took: 0.0486 sec (human-friendly: 0 h /0 m /0 s)
+DEBUG:cave.timer:func:'_plot_contour' took: 0.0045 sec (human-friendly: 0 h /0 m /0 s)
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:12 different glyph renderers, 1 different zorder-values
+DEBUG:cave.timer:func:'_scatter' took: 0.0096 sec (human-friendly: 0 h /0 m /0 s)
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Quantile 0: 12 scatter-handles
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Saving plot to test_cave_smac/cfp_over_time/configurator_footprint0.png
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Exporting to test_cave_smac/cfp_over_time/configurator_footprint0.png (base: test_cave_smac/cfp_over_time)
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:test_cave_smac/cfp_over_time does not exist. Creating...
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/url {"url": "file:////tmp/bokehyzxvs4su.html", "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/url HTTP/1.1" 200 74
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/window/current/maximize {"windowHandle": "current", "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/window/current/maximize HTTP/1.1" 200 74
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "document.body.style.width = '100%';", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "\n            const b = window.Bokeh;\n            return b && b.documents && b.documents.length > 0;\n        ", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "\n// add private window prop to check that render is complete\nwindow._bokeh_render_complete = false;\nfunction done() {\n  window._bokeh_render_complete = true;\n}\n\nvar doc = window.Bokeh.documents[0];\n\nif (doc.is_idle)\n  done();\nelse\n  doc.idle.connect(done);\n", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "return window._bokeh_render_complete;", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/log {"type": "browser", "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/log HTTP/1.1" 200 2722
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:GET http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/screenshot {"sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "GET /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/screenshot HTTP/1.1" 200 41114
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "\nreturn document.getElementsByClassName('bk-root')[0].children[0].getBoundingClientRect()\n", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 140
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'pHYs' 41 9
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 62 8192
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37208), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37210), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37212), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37214), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37216), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37218), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37220), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37222), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37224), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.timer:func:'export_bokeh' took: 0.3830 sec (human-friendly: 0 h /0 m /0 s)
+DEBUG:cave.timer:func:'_plot_contour' took: 0.0024 sec (human-friendly: 0 h /0 m /0 s)
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:24 different glyph renderers, 2 different zorder-values
+DEBUG:cave.timer:func:'_scatter' took: 0.0194 sec (human-friendly: 0 h /0 m /0 s)
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Quantile 1: 24 scatter-handles
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Saving plot to test_cave_smac/cfp_over_time/configurator_footprint1.png
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Exporting to test_cave_smac/cfp_over_time/configurator_footprint1.png (base: test_cave_smac/cfp_over_time)
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/url {"url": "file:////tmp/bokehs1xa6qpt.html", "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/url HTTP/1.1" 200 74
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/window/current/maximize {"windowHandle": "current", "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/window/current/maximize HTTP/1.1" 200 74
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "document.body.style.width = '100%';", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "\n            const b = window.Bokeh;\n            return b && b.documents && b.documents.length > 0;\n        ", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "\n// add private window prop to check that render is complete\nwindow._bokeh_render_complete = false;\nfunction done() {\n  window._bokeh_render_complete = true;\n}\n\nvar doc = window.Bokeh.documents[0];\n\nif (doc.is_idle)\n  done();\nelse\n  doc.idle.connect(done);\n", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "return window._bokeh_render_complete;", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/log {"type": "browser", "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/log HTTP/1.1" 200 4339
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:GET http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/screenshot {"sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "GET /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/screenshot HTTP/1.1" 200 41650
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "\nreturn document.getElementsByClassName('bk-root')[0].children[0].getBoundingClientRect()\n", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 140
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'pHYs' 41 9
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 62 8192
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37226), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37228), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37230), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37232), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37234), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37236), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37238), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37240), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37242), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.timer:func:'export_bokeh' took: 0.4911 sec (human-friendly: 0 h /0 m /0 s)
+DEBUG:cave.timer:func:'_plot_contour' took: 0.0024 sec (human-friendly: 0 h /0 m /0 s)
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:24 different glyph renderers, 2 different zorder-values
+DEBUG:cave.timer:func:'_scatter' took: 0.0192 sec (human-friendly: 0 h /0 m /0 s)
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Quantile 2: 24 scatter-handles
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Saving plot to test_cave_smac/cfp_over_time/configurator_footprint2.png
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Exporting to test_cave_smac/cfp_over_time/configurator_footprint2.png (base: test_cave_smac/cfp_over_time)
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/url {"url": "file:////tmp/bokeh1va6pw02.html", "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/url HTTP/1.1" 200 74
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/window/current/maximize {"windowHandle": "current", "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/window/current/maximize HTTP/1.1" 200 74
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "document.body.style.width = '100%';", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "\n            const b = window.Bokeh;\n            return b && b.documents && b.documents.length > 0;\n        ", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "\n// add private window prop to check that render is complete\nwindow._bokeh_render_complete = false;\nfunction done() {\n  window._bokeh_render_complete = true;\n}\n\nvar doc = window.Bokeh.documents[0];\n\nif (doc.is_idle)\n  done();\nelse\n  doc.idle.connect(done);\n", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "return window._bokeh_render_complete;", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/log {"type": "browser", "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/log HTTP/1.1" 200 4339
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:GET http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/screenshot {"sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "GET /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/screenshot HTTP/1.1" 200 42138
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "\nreturn document.getElementsByClassName('bk-root')[0].children[0].getBoundingClientRect()\n", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 140
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'pHYs' 41 9
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 62 8192
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37244), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37246), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37248), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37250), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37252), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37254), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37256), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37258), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37260), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.timer:func:'export_bokeh' took: 0.5009 sec (human-friendly: 0 h /0 m /0 s)
+DEBUG:cave.timer:func:'_plot_contour' took: 0.0025 sec (human-friendly: 0 h /0 m /0 s)
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:24 different glyph renderers, 2 different zorder-values
+DEBUG:cave.timer:func:'_scatter' took: 0.0199 sec (human-friendly: 0 h /0 m /0 s)
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Quantile 3: 24 scatter-handles
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Saving plot to test_cave_smac/cfp_over_time/configurator_footprint3.png
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Exporting to test_cave_smac/cfp_over_time/configurator_footprint3.png (base: test_cave_smac/cfp_over_time)
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/url {"url": "file:////tmp/bokehpse84pht.html", "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/url HTTP/1.1" 200 74
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/window/current/maximize {"windowHandle": "current", "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/window/current/maximize HTTP/1.1" 200 74
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "document.body.style.width = '100%';", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "\n            const b = window.Bokeh;\n            return b && b.documents && b.documents.length > 0;\n        ", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "\n// add private window prop to check that render is complete\nwindow._bokeh_render_complete = false;\nfunction done() {\n  window._bokeh_render_complete = true;\n}\n\nvar doc = window.Bokeh.documents[0];\n\nif (doc.is_idle)\n  done();\nelse\n  doc.idle.connect(done);\n", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "return window._bokeh_render_complete;", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/log {"type": "browser", "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/log HTTP/1.1" 200 4339
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:GET http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/screenshot {"sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "GET /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/screenshot HTTP/1.1" 200 42702
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "\nreturn document.getElementsByClassName('bk-root')[0].children[0].getBoundingClientRect()\n", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 140
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'pHYs' 41 9
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 62 8192
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37262), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37264), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37266), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37268), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37270), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37272), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37274), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37276), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37278), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.timer:func:'export_bokeh' took: 0.4843 sec (human-friendly: 0 h /0 m /0 s)
+DEBUG:cave.timer:func:'_plot_contour' took: 0.0026 sec (human-friendly: 0 h /0 m /0 s)
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:24 different glyph renderers, 2 different zorder-values
+DEBUG:cave.timer:func:'_scatter' took: 0.0198 sec (human-friendly: 0 h /0 m /0 s)
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Quantile 4: 24 scatter-handles
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Saving plot to test_cave_smac/cfp_over_time/configurator_footprint4.png
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Exporting to test_cave_smac/cfp_over_time/configurator_footprint4.png (base: test_cave_smac/cfp_over_time)
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/url {"url": "file:////tmp/bokeh541tbkif.html", "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/url HTTP/1.1" 200 74
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/window/current/maximize {"windowHandle": "current", "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/window/current/maximize HTTP/1.1" 200 74
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "document.body.style.width = '100%';", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "\n            const b = window.Bokeh;\n            return b && b.documents && b.documents.length > 0;\n        ", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "\n// add private window prop to check that render is complete\nwindow._bokeh_render_complete = false;\nfunction done() {\n  window._bokeh_render_complete = true;\n}\n\nvar doc = window.Bokeh.documents[0];\n\nif (doc.is_idle)\n  done();\nelse\n  doc.idle.connect(done);\n", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "return window._bokeh_render_complete;", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/log {"type": "browser", "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/log HTTP/1.1" 200 3493
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:GET http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/screenshot {"sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "GET /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/screenshot HTTP/1.1" 200 43574
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "\nreturn document.getElementsByClassName('bk-root')[0].children[0].getBoundingClientRect()\n", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 140
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'pHYs' 41 9
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 62 8192
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37280), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37282), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37284), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37286), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37288), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37290), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37292), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37294), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37296), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.timer:func:'export_bokeh' took: 0.4501 sec (human-friendly: 0 h /0 m /0 s)
+DEBUG:cave.timer:func:'_plot_contour' took: 0.0025 sec (human-friendly: 0 h /0 m /0 s)
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:24 different glyph renderers, 2 different zorder-values
+DEBUG:cave.timer:func:'_scatter' took: 0.0216 sec (human-friendly: 0 h /0 m /0 s)
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Quantile 5: 24 scatter-handles
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Saving plot to test_cave_smac/cfp_over_time/configurator_footprint5.png
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Exporting to test_cave_smac/cfp_over_time/configurator_footprint5.png (base: test_cave_smac/cfp_over_time)
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/url {"url": "file:////tmp/bokehpzkacgs3.html", "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/url HTTP/1.1" 200 74
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/window/current/maximize {"windowHandle": "current", "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/window/current/maximize HTTP/1.1" 200 74
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "document.body.style.width = '100%';", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "\n            const b = window.Bokeh;\n            return b && b.documents && b.documents.length > 0;\n        ", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "\n// add private window prop to check that render is complete\nwindow._bokeh_render_complete = false;\nfunction done() {\n  window._bokeh_render_complete = true;\n}\n\nvar doc = window.Bokeh.documents[0];\n\nif (doc.is_idle)\n  done();\nelse\n  doc.idle.connect(done);\n", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "return window._bokeh_render_complete;", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/log {"type": "browser", "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/log HTTP/1.1" 200 2611
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:GET http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/screenshot {"sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "GET /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/screenshot HTTP/1.1" 200 44518
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "\nreturn document.getElementsByClassName('bk-root')[0].children[0].getBoundingClientRect()\n", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 140
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'pHYs' 41 9
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 62 8192
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37298), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37300), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37302), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37304), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37306), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37308), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37310), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37312), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37314), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.timer:func:'export_bokeh' took: 0.4610 sec (human-friendly: 0 h /0 m /0 s)
+DEBUG:cave.timer:func:'_plot_contour' took: 0.0025 sec (human-friendly: 0 h /0 m /0 s)
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:24 different glyph renderers, 2 different zorder-values
+DEBUG:cave.timer:func:'_scatter' took: 0.0193 sec (human-friendly: 0 h /0 m /0 s)
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Quantile 6: 24 scatter-handles
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Saving plot to test_cave_smac/cfp_over_time/configurator_footprint6.png
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Exporting to test_cave_smac/cfp_over_time/configurator_footprint6.png (base: test_cave_smac/cfp_over_time)
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/url {"url": "file:////tmp/bokehygoriyle.html", "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/url HTTP/1.1" 200 74
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/window/current/maximize {"windowHandle": "current", "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/window/current/maximize HTTP/1.1" 200 74
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "document.body.style.width = '100%';", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "\n            const b = window.Bokeh;\n            return b && b.documents && b.documents.length > 0;\n        ", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "\n// add private window prop to check that render is complete\nwindow._bokeh_render_complete = false;\nfunction done() {\n  window._bokeh_render_complete = true;\n}\n\nvar doc = window.Bokeh.documents[0];\n\nif (doc.is_idle)\n  done();\nelse\n  doc.idle.connect(done);\n", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "return window._bokeh_render_complete;", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/log {"type": "browser", "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/log HTTP/1.1" 200 2611
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:GET http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/screenshot {"sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "GET /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/screenshot HTTP/1.1" 200 46066
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "\nreturn document.getElementsByClassName('bk-root')[0].children[0].getBoundingClientRect()\n", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 140
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'pHYs' 41 9
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 62 8192
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37316), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37318), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37320), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37322), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37324), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37326), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37328), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37330), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37332), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.timer:func:'export_bokeh' took: 0.4536 sec (human-friendly: 0 h /0 m /0 s)
+DEBUG:cave.timer:func:'_plot_contour' took: 0.0023 sec (human-friendly: 0 h /0 m /0 s)
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:24 different glyph renderers, 2 different zorder-values
+DEBUG:cave.timer:func:'_scatter' took: 0.0194 sec (human-friendly: 0 h /0 m /0 s)
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Quantile 7: 24 scatter-handles
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Saving plot to test_cave_smac/cfp_over_time/configurator_footprint7.png
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Exporting to test_cave_smac/cfp_over_time/configurator_footprint7.png (base: test_cave_smac/cfp_over_time)
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/url {"url": "file:////tmp/bokehyepir7c5.html", "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/url HTTP/1.1" 200 74
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/window/current/maximize {"windowHandle": "current", "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/window/current/maximize HTTP/1.1" 200 74
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "document.body.style.width = '100%';", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "\n            const b = window.Bokeh;\n            return b && b.documents && b.documents.length > 0;\n        ", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "\n// add private window prop to check that render is complete\nwindow._bokeh_render_complete = false;\nfunction done() {\n  window._bokeh_render_complete = true;\n}\n\nvar doc = window.Bokeh.documents[0];\n\nif (doc.is_idle)\n  done();\nelse\n  doc.idle.connect(done);\n", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "return window._bokeh_render_complete;", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/log {"type": "browser", "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/log HTTP/1.1" 200 2611
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:GET http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/screenshot {"sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "GET /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/screenshot HTTP/1.1" 200 46502
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "\nreturn document.getElementsByClassName('bk-root')[0].children[0].getBoundingClientRect()\n", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 140
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'pHYs' 41 9
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 62 8192
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37334), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37336), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37338), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37340), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37342), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37344), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37346), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37348), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37350), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.timer:func:'export_bokeh' took: 0.4580 sec (human-friendly: 0 h /0 m /0 s)
+DEBUG:cave.timer:func:'_plot_contour' took: 0.0024 sec (human-friendly: 0 h /0 m /0 s)
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:24 different glyph renderers, 2 different zorder-values
+DEBUG:cave.timer:func:'_scatter' took: 0.0192 sec (human-friendly: 0 h /0 m /0 s)
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Quantile 8: 24 scatter-handles
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Saving plot to test_cave_smac/cfp_over_time/configurator_footprint8.png
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Exporting to test_cave_smac/cfp_over_time/configurator_footprint8.png (base: test_cave_smac/cfp_over_time)
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/url {"url": "file:////tmp/bokehwevdplg2.html", "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/url HTTP/1.1" 200 74
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/window/current/maximize {"windowHandle": "current", "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/window/current/maximize HTTP/1.1" 200 74
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "document.body.style.width = '100%';", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "\n            const b = window.Bokeh;\n            return b && b.documents && b.documents.length > 0;\n        ", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "\n// add private window prop to check that render is complete\nwindow._bokeh_render_complete = false;\nfunction done() {\n  window._bokeh_render_complete = true;\n}\n\nvar doc = window.Bokeh.documents[0];\n\nif (doc.is_idle)\n  done();\nelse\n  doc.idle.connect(done);\n", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "return window._bokeh_render_complete;", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/log {"type": "browser", "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/log HTTP/1.1" 200 2611
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:GET http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/screenshot {"sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "GET /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/screenshot HTTP/1.1" 200 47790
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "\nreturn document.getElementsByClassName('bk-root')[0].children[0].getBoundingClientRect()\n", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 140
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'pHYs' 41 9
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 62 8192
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37352), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37354), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37356), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37358), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37360), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37362), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37364), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37366), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37368), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.timer:func:'export_bokeh' took: 0.4556 sec (human-friendly: 0 h /0 m /0 s)
+DEBUG:cave.timer:func:'_plot_contour' took: 0.0024 sec (human-friendly: 0 h /0 m /0 s)
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:24 different glyph renderers, 2 different zorder-values
+DEBUG:cave.timer:func:'_scatter' took: 0.0194 sec (human-friendly: 0 h /0 m /0 s)
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Quantile 9: 24 scatter-handles
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Saving plot to test_cave_smac/cfp_over_time/configurator_footprint9.png
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Exporting to test_cave_smac/cfp_over_time/configurator_footprint9.png (base: test_cave_smac/cfp_over_time)
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/url {"url": "file:////tmp/bokehx7o7p9mp.html", "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/url HTTP/1.1" 200 74
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/window/current/maximize {"windowHandle": "current", "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/window/current/maximize HTTP/1.1" 200 74
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "document.body.style.width = '100%';", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "\n            const b = window.Bokeh;\n            return b && b.documents && b.documents.length > 0;\n        ", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "\n// add private window prop to check that render is complete\nwindow._bokeh_render_complete = false;\nfunction done() {\n  window._bokeh_render_complete = true;\n}\n\nvar doc = window.Bokeh.documents[0];\n\nif (doc.is_idle)\n  done();\nelse\n  doc.idle.connect(done);\n", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "return window._bokeh_render_complete;", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/log {"type": "browser", "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/log HTTP/1.1" 200 2611
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:GET http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/screenshot {"sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "GET /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/screenshot HTTP/1.1" 200 48874
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "\nreturn document.getElementsByClassName('bk-root')[0].children[0].getBoundingClientRect()\n", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 140
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'pHYs' 41 9
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 62 8192
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37370), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37372), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37374), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37376), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37378), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37380), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37382), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37384), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37386), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.timer:func:'export_bokeh' took: 0.4592 sec (human-friendly: 0 h /0 m /0 s)
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Adding checkboxes
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:Exporting to test_cave_smac/content/images/configurator_footprint.png (base: test_cave_smac/content/images)
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/url {"url": "file:////tmp/bokehydaucrcv.html", "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/url HTTP/1.1" 200 74
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/window/current/maximize {"windowHandle": "current", "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/window/current/maximize HTTP/1.1" 200 74
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "document.body.style.width = '100%';", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "\n            const b = window.Bokeh;\n            return b && b.documents && b.documents.length > 0;\n        ", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "\n// add private window prop to check that render is complete\nwindow._bokeh_render_complete = false;\nfunction done() {\n  window._bokeh_render_complete = true;\n}\n\nvar doc = window.Bokeh.documents[0];\n\nif (doc.is_idle)\n  done();\nelse\n  doc.idle.connect(done);\n", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "return window._bokeh_render_complete;", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 76
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/log {"type": "browser", "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/log HTTP/1.1" 200 29957
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:GET http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/screenshot {"sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "GET /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/screenshot HTTP/1.1" 200 49182
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:55857/wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute {"script": "\nreturn document.getElementsByClassName('bk-root')[0].children[0].getBoundingClientRect()\n", "args": [], "sessionId": "b0540340-e6d1-11e9-9e44-9d7c72cdaaca"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:55857
+DEBUG:urllib3.connectionpool:http://127.0.0.1:55857 "POST /wd/hub/session/b0540340-e6d1-11e9-9e44-9d7c72cdaaca/execute HTTP/1.1" 200 140
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'pHYs' 41 9
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 62 8192
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37388), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37390), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37392), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37394), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37396), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37398), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37400), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37402), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.plot.configurator_footprint.ConfiguratorFootprintPlotter:During export a <class 'ResourceWarning'> was raised: unclosed <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 37404), raddr=('127.0.0.1', 55857)>
+DEBUG:cave.timer:func:'export_bokeh' took: 1.6019 sec (human-friendly: 0 h /0 m /1 s)
+DEBUG:HTMLBuilder:No content for Feature Analysis, skipping in html-generation
+DEBUG:HTMLBuilder:No content for BOHB Plot, skipping in html-generation
+DEBUG:cave.cavefacade.CAVE:Using aggregated cave-instance
+DEBUG:cave.cavefacade.CAVE:Args: (), Kwargs: {}
+INFO:cave.cavefacade.CAVE:    plotting 5 parameters for (max) 100 configurations
+DEBUG:cave.analyzer.parallel_coordinates.ParallelCoordinates:none not evaluated.. choosing at random from: ['fanova', 'lpi']
+DEBUG:cave.analyzer.parallel_coordinates.ParallelCoordinates:Sorted hp's by method 'fanova': ['C', 'random_state', 'solver']
+DEBUG:cave.analyzer.parallel_coordinates.ParallelCoordinates:Reduced to ['C', 'random_state', 'solver']
+DEBUG:cave.plot.parallel_coordinates.ParallelCoordinatesPlotter:Plotting 50 configs.
+DEBUG:cave.plot.parallel_coordinates.ParallelCoordinatesPlotter:Saving to test_cave_smac/parallel_coordinates_linear_cost_uniform_sampling_50.png
+DEBUG:cave.plot.parallel_coordinates.ParallelCoordinatesPlotter:random_state has only one explored value ([0.])
+DEBUG:cave.plot.parallel_coordinates.ParallelCoordinatesPlotter:solver has only one explored value ([0.])
+DEBUG:cave.plot.parallel_coordinates.ParallelCoordinatesPlotter:Saving to test_cave_smac/parallel_coordinates_linear_cost_log_sampling_50.png
+DEBUG:cave.plot.parallel_coordinates.ParallelCoordinatesPlotter:random_state has only one explored value ([0.])
+DEBUG:cave.plot.parallel_coordinates.ParallelCoordinatesPlotter:solver has only one explored value ([0.])
+DEBUG:cave.plot.parallel_coordinates.ParallelCoordinatesPlotter:Saving to test_cave_smac/parallel_coordinates_log_cost_uniform_sampling_50.png
+DEBUG:cave.plot.parallel_coordinates.ParallelCoordinatesPlotter:random_state has only one explored value ([0.])
+DEBUG:cave.plot.parallel_coordinates.ParallelCoordinatesPlotter:solver has only one explored value ([0.])
+DEBUG:cave.plot.parallel_coordinates.ParallelCoordinatesPlotter:Saving to test_cave_smac/parallel_coordinates_log_cost_log_sampling_50.png
+DEBUG:cave.plot.parallel_coordinates.ParallelCoordinatesPlotter:random_state has only one explored value ([0.])
+DEBUG:cave.plot.parallel_coordinates.ParallelCoordinatesPlotter:solver has only one explored value ([0.])
+DEBUG:cave.analyzer.parallel_coordinates.ParallelCoordinates:Paths to plot(s): ['test_cave_smac/parallel_coordinates_linear_cost_log_sampling_50.png']
+DEBUG:cave.analyzer.parallel_coordinates.ParallelCoordinates:Paths to plot(s): ['test_cave_smac/parallel_coordinates_linear_cost_log_sampling_50.png']
+DEBUG:HTMLBuilder:No content for Feature Analysis, skipping in html-generation
+DEBUG:HTMLBuilder:No content for BOHB Plot, skipping in html-generation
+DEBUG:HTMLBuilder:No content for Feature Analysis, skipping in html-generation
+DEBUG:HTMLBuilder:No content for BOHB Plot, skipping in html-generation
+INFO:cave.cavefacade.CAVE:CAVE finished. Report is located in test_cave_smac/report.html
+DEBUG:cave.timer:func:'analyze' took: 14.3919 sec (human-friendly: 0 h /0 m /14 s)

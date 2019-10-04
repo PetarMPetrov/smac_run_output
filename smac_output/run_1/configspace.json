@@ -1,0 +1,30 @@
+{
+  "hyperparameters": [
+    {
+      "name": "random_state",
+      "type": "categorical",
+      "choices": [
+        42
+      ],
+      "default": 42
+    },
+    {
+      "name": "C",
+      "type": "uniform_float",
+      "log": true,
+      "lower": 0.03,
+      "upper": 10.0,
+      "default": 1.0
+    },
+    {
+      "name": "solver",
+      "type": "categorical",
+      "choices": [
+        "liblinear"
+      ],
+      "default": "liblinear"
+    }
+  ],
+  "conditions": [],
+  "forbiddens": []
+}

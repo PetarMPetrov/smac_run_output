@@ -1,0 +1,28 @@
+{
+    "fanova": {
+        "imp": {
+            "C": 1.0000000000000002,
+            "['C', 'random_state']": 0.0,
+            "['C', 'solver']": 0.0,
+            "['random_state', 'solver']": 0.0,
+            "random_state": 1.3027204210292778e-15,
+            "solver": 1.3027204210292778e-15
+        },
+        "order": [
+            "C",
+            "random_state",
+            "solver",
+            "['C', 'random_state']",
+            "['C', 'solver']",
+            "['random_state', 'solver']"
+        ]
+    },
+    "lpi": {
+        "imp": {
+            "C": NaN
+        },
+        "order": [
+            "C"
+        ]
+    }
+}
