@@ -1,0 +1,308 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+
+<title>CAVE</title>
+<link href="html/css/accordion.css" rel="stylesheet" />
+<link href="html/css/table.css" rel="stylesheet" />
+<link href="html/css/lightbox.min.css" rel="stylesheet" />
+<link href="html/css/help-tip.css" rel="stylesheet" />
+<link href="html/css/global.css" rel="stylesheet" />
+<link href="html/css/back-to-top.css" rel="stylesheet" />
+<link href="html/css/tabs.css" rel="stylesheet" />
+
+<link href="html/css/bokeh-1.1.0.min.css" rel="stylesheet" type="text/css">
+<link href="html/css/bokeh-widgets-1.1.0.min.css" rel="stylesheet" type="text/css">
+<link href="html/css/bokeh-tables-1.1.0.min.css" rel="stylesheet" type="text/css">
+
+<script src="html/js/tabs.js"></script>
+
+<script src="html/js/bokeh-1.1.0.min.js"></script>
+<script src="html/js/bokeh-widgets-1.1.0.min.js"></script>
+<script src="html/js/bokeh-tables-1.1.0.min.js"></script>
+
+<!--Below here are the includes of scripts for the report (e.g. bokeh)-->
+<script src="content/js/CostOverTime__10_script.js"></script>
+<script src="content/js/Interactive__11_script.js"></script>
+<script src="content/js/ImportanceTable__12_script.js"></script>
+
+<!--Above here are the includes of scripts for the report (e.g. bokeh)-->
+
+</head>
+<body>
+<script src="http://www.w3schools.com/lib/w3data.js"></script>
+<script src="html/js/lightbox-plus-jquery.min.js"></script>
+<header>
+    <div class='l-wrapper'>
+        <img class='logo logo--configurator' src="html/images/SMAC_logo.png" />
+        <img class='logo logo--ml' src="html/images/automl-logo.png" />
+    </div>
+</header>
+<div class='l-wrapper'>
+<h1>CAVE</h1>
+<div class="accordion">Meta Data <div class="help-tip"><p>Meta data, i.e. number of instances and parameters as well as configuration budget. Statistics apply to the best run, if multiple configurator runs are compared.</p></div></div>
+<div class="panel">
+<div class="accordion">General <div class="help-tip"><p>General information about the optimization scenario.</p></div></div>
+<div class="panel">
+<div style="overflow-x: auto" align="center">
+<table border="1" class="dataframe">
+  <tbody>
+    <tr>
+      <th># parameters</th>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>Deterministic target algorithm</th>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>Optimized run objective</th>
+      <td>quality</td>
+    </tr>
+    <tr>
+      <th>Walltime budget</th>
+      <td>inf</td>
+    </tr>
+    <tr>
+      <th>Runcount budget</th>
+      <td>50</td>
+    </tr>
+    <tr>
+      <th>CPU budget</th>
+      <td>inf</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div><div class="accordion">Run-Specific <div class="help-tip"><p>Information to specific runs (if there are multiple runs). Interesting for parallel optimizations or usage of budgets/fidelities.</p></div></div>
+<div class="panel">
+<div style="overflow-x: auto" align="center">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: left;">
+      <th></th>
+      <th>run 1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Total time spent evaluating configurations</th>
+      <td>16.89 sec</td>
+    </tr>
+    <tr>
+      <th>Average time per configuration (mean / std)</th>
+      <td>0.34 sec (±  0.04)</td>
+    </tr>
+    <tr>
+      <th># evaluated configurations</th>
+      <td>50</td>
+    </tr>
+    <tr>
+      <th># changed parameters (default to incumbent)</th>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div><div class="accordion">Configuration Space <div class="help-tip"><p>The parameter configuration space. (See github.com/automl/ConfigSpace)</p></div></div>
+<div class="panel">
+<div style="overflow-x: auto" align="center">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: left;">
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Range/Choices</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>C</td>
+      <td>UniformFloatHyperparameter</td>
+      <td>[0.03, 10.0] (log)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>random_state</td>
+      <td>CategoricalHyperparameter</td>
+      <td>(42,)</td>
+      <td>42</td>
+    </tr>
+    <tr>
+      <td>solver</td>
+      <td>CategoricalHyperparameter</td>
+      <td>('liblinear',)</td>
+      <td>liblinear</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div></div><div class="accordion">Best Configuration <div class="help-tip"><p>Comparing parameters of default and incumbent. Parameters that differ from default to incumbent are presented first. Parameters that are inactive for both configurations are omitted.</p></div></div>
+<div class="panel">
+<div style="overflow-x: auto" align="center">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Default</th>
+      <th>Incumbent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>--------------- Changed parameters: ---------------</th>
+      <td>-----</td>
+      <td>-----</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>1</td>
+      <td>6.39593</td>
+    </tr>
+    <tr>
+      <th>--------------- Unchanged parameters: ---------------</th>
+      <td>-----</td>
+      <td>-----</td>
+    </tr>
+    <tr>
+      <th>random_state</th>
+      <td>42</td>
+      <td>42</td>
+    </tr>
+    <tr>
+      <th>solver</th>
+      <td>liblinear</td>
+      <td>liblinear</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div><div class="accordion">Performance Analysis <div class="help-tip"><p>
+Contains different ways of analyzing
+the final incumbent and the performance of
+the algorithm's default parameter
+configuration.</p></div></div>
+<div class="panel">
+<div class="accordion">Performance Table <div class="help-tip"><p>If the run-objective is 'runtime': PAR stands for Penalized Average Runtime. If there is a timeout in the scenario, runs that were thus cut off can be penalized with a factor (because we do not know how long it would have run). PAR1 is no penalty, PAR10 will count all cutoffs with a factor of 10.  For timeouts: if there are multiple runs on the same configuration-instance pair (with different seeds), some resulting in timeouts and some not, the majority decides here.  P-value (between 0 and 1) results from comparing default and incumbent using a paired permutation test with 10000 iterations (permuting instances) and tests against the null-hypothesis that the mean of performance between default and incumbent is equal.  Oracle performance searches for the best single run per instance (so the best seed/configuration-pair that was seen) and aggregates over them.</p></div></div>
+<div class="panel">
+<div style="overflow-x: auto" align="center">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Default</th>
+      <th>Incumbent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Quality</th>
+      <td>0.118</td>
+      <td>0.107</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div></div><div class="accordion">Configurators Behavior </div>
+<div class="panel">
+<div class="accordion">Cost Over Time <div class="help-tip"><p>Depicts the average cost of the best so far found configuration (using all trajectory data) over the time spent by the configurator (including target algorithm runs and the overhead generated by the configurator) If the curve flattens out early, it indicates that too much time was spent for the configurator run; whereas a curve that is still improving at the end of the budget indicates that one should increase the configuration budget. The plotted standard deviation gives the uncertainty over multiple configurator runs.  </p></div></div>
+<div class="panel">
+<div align="center">
+
+<div class="bk-root" id="7ccb6f1b-4b52-4802-9938-ab425a35ccc6" data-root-id="1105"></div>
+</div>
+</div><div class="accordion">Configurator Footprint <div class="help-tip"><p>Analysis of the iteratively sampled configurations during the optimization procedure.  Multi-dimensional scaling (MDS) is used to reduce dimensionality of the search space and plot the distribution of evaluated configurations. The larger the dot, the more often the configuration was evaluated on instances from the set. Configurations that were incumbents at least once during optimization are marked as red squares.  Configurations acquired through local search are marked with a 'x'.  The downward triangle denotes the final incumbent, whereas the orange upward triangle denotes the default configuration.  The heatmap and the colorbar correspond to the predicted performance in that part of the search space.  </p></div></div>
+<div class="panel">
+<div class="accordion">Interactive </div>
+<div class="panel">
+<div align="center">
+
+<div class="bk-root" id="cf4f1a97-5e65-413f-bf41-34e4792ebe00" data-root-id="5180"></div>
+</div>
+</div><div class="accordion">Static </div>
+<div class="panel">
+<div align="center">
+<a href="cfp_over_time/configurator_footprint0.png" data-lightbox="['test_cave_smac/cfp_over_time/configurator_footprint0.png', 'test_cave_smac/cfp_over_time/configurator_footprint1.png', 'test_cave_smac/cfp_over_time/configurator_footprint2.png', 'test_cave_smac/cfp_over_time/configurator_footprint3.png', 'test_cave_smac/cfp_over_time/configurator_footprint4.png', 'test_cave_smac/cfp_over_time/configurator_footprint5.png', 'test_cave_smac/cfp_over_time/configurator_footprint6.png', 'test_cave_smac/cfp_over_time/configurator_footprint7.png', 'test_cave_smac/cfp_over_time/configurator_footprint8.png', 'test_cave_smac/cfp_over_time/configurator_footprint9.png']" data-title="cfp_over_time/configurator_footprint0.png"><img src="cfp_over_time/configurator_footprint0.png" alt="Plot missing - is phantomjs installed? Check CAVEs FAQ for infos." style="float: left; width: 9%; margin-right: 1%; margin-bottom: 0.5em;"></a>
+<a href="cfp_over_time/configurator_footprint1.png" data-lightbox="['test_cave_smac/cfp_over_time/configurator_footprint0.png', 'test_cave_smac/cfp_over_time/configurator_footprint1.png', 'test_cave_smac/cfp_over_time/configurator_footprint2.png', 'test_cave_smac/cfp_over_time/configurator_footprint3.png', 'test_cave_smac/cfp_over_time/configurator_footprint4.png', 'test_cave_smac/cfp_over_time/configurator_footprint5.png', 'test_cave_smac/cfp_over_time/configurator_footprint6.png', 'test_cave_smac/cfp_over_time/configurator_footprint7.png', 'test_cave_smac/cfp_over_time/configurator_footprint8.png', 'test_cave_smac/cfp_over_time/configurator_footprint9.png']" data-title="cfp_over_time/configurator_footprint1.png"><img src="cfp_over_time/configurator_footprint1.png" alt="Plot missing - is phantomjs installed? Check CAVEs FAQ for infos." style="float: left; width: 9%; margin-right: 1%; margin-bottom: 0.5em;"></a>
+<a href="cfp_over_time/configurator_footprint2.png" data-lightbox="['test_cave_smac/cfp_over_time/configurator_footprint0.png', 'test_cave_smac/cfp_over_time/configurator_footprint1.png', 'test_cave_smac/cfp_over_time/configurator_footprint2.png', 'test_cave_smac/cfp_over_time/configurator_footprint3.png', 'test_cave_smac/cfp_over_time/configurator_footprint4.png', 'test_cave_smac/cfp_over_time/configurator_footprint5.png', 'test_cave_smac/cfp_over_time/configurator_footprint6.png', 'test_cave_smac/cfp_over_time/configurator_footprint7.png', 'test_cave_smac/cfp_over_time/configurator_footprint8.png', 'test_cave_smac/cfp_over_time/configurator_footprint9.png']" data-title="cfp_over_time/configurator_footprint2.png"><img src="cfp_over_time/configurator_footprint2.png" alt="Plot missing - is phantomjs installed? Check CAVEs FAQ for infos." style="float: left; width: 9%; margin-right: 1%; margin-bottom: 0.5em;"></a>
+<a href="cfp_over_time/configurator_footprint3.png" data-lightbox="['test_cave_smac/cfp_over_time/configurator_footprint0.png', 'test_cave_smac/cfp_over_time/configurator_footprint1.png', 'test_cave_smac/cfp_over_time/configurator_footprint2.png', 'test_cave_smac/cfp_over_time/configurator_footprint3.png', 'test_cave_smac/cfp_over_time/configurator_footprint4.png', 'test_cave_smac/cfp_over_time/configurator_footprint5.png', 'test_cave_smac/cfp_over_time/configurator_footprint6.png', 'test_cave_smac/cfp_over_time/configurator_footprint7.png', 'test_cave_smac/cfp_over_time/configurator_footprint8.png', 'test_cave_smac/cfp_over_time/configurator_footprint9.png']" data-title="cfp_over_time/configurator_footprint3.png"><img src="cfp_over_time/configurator_footprint3.png" alt="Plot missing - is phantomjs installed? Check CAVEs FAQ for infos." style="float: left; width: 9%; margin-right: 1%; margin-bottom: 0.5em;"></a>
+<a href="cfp_over_time/configurator_footprint4.png" data-lightbox="['test_cave_smac/cfp_over_time/configurator_footprint0.png', 'test_cave_smac/cfp_over_time/configurator_footprint1.png', 'test_cave_smac/cfp_over_time/configurator_footprint2.png', 'test_cave_smac/cfp_over_time/configurator_footprint3.png', 'test_cave_smac/cfp_over_time/configurator_footprint4.png', 'test_cave_smac/cfp_over_time/configurator_footprint5.png', 'test_cave_smac/cfp_over_time/configurator_footprint6.png', 'test_cave_smac/cfp_over_time/configurator_footprint7.png', 'test_cave_smac/cfp_over_time/configurator_footprint8.png', 'test_cave_smac/cfp_over_time/configurator_footprint9.png']" data-title="cfp_over_time/configurator_footprint4.png"><img src="cfp_over_time/configurator_footprint4.png" alt="Plot missing - is phantomjs installed? Check CAVEs FAQ for infos." style="float: left; width: 9%; margin-right: 1%; margin-bottom: 0.5em;"></a>
+<a href="cfp_over_time/configurator_footprint5.png" data-lightbox="['test_cave_smac/cfp_over_time/configurator_footprint0.png', 'test_cave_smac/cfp_over_time/configurator_footprint1.png', 'test_cave_smac/cfp_over_time/configurator_footprint2.png', 'test_cave_smac/cfp_over_time/configurator_footprint3.png', 'test_cave_smac/cfp_over_time/configurator_footprint4.png', 'test_cave_smac/cfp_over_time/configurator_footprint5.png', 'test_cave_smac/cfp_over_time/configurator_footprint6.png', 'test_cave_smac/cfp_over_time/configurator_footprint7.png', 'test_cave_smac/cfp_over_time/configurator_footprint8.png', 'test_cave_smac/cfp_over_time/configurator_footprint9.png']" data-title="cfp_over_time/configurator_footprint5.png"><img src="cfp_over_time/configurator_footprint5.png" alt="Plot missing - is phantomjs installed? Check CAVEs FAQ for infos." style="float: left; width: 9%; margin-right: 1%; margin-bottom: 0.5em;"></a>
+<a href="cfp_over_time/configurator_footprint6.png" data-lightbox="['test_cave_smac/cfp_over_time/configurator_footprint0.png', 'test_cave_smac/cfp_over_time/configurator_footprint1.png', 'test_cave_smac/cfp_over_time/configurator_footprint2.png', 'test_cave_smac/cfp_over_time/configurator_footprint3.png', 'test_cave_smac/cfp_over_time/configurator_footprint4.png', 'test_cave_smac/cfp_over_time/configurator_footprint5.png', 'test_cave_smac/cfp_over_time/configurator_footprint6.png', 'test_cave_smac/cfp_over_time/configurator_footprint7.png', 'test_cave_smac/cfp_over_time/configurator_footprint8.png', 'test_cave_smac/cfp_over_time/configurator_footprint9.png']" data-title="cfp_over_time/configurator_footprint6.png"><img src="cfp_over_time/configurator_footprint6.png" alt="Plot missing - is phantomjs installed? Check CAVEs FAQ for infos." style="float: left; width: 9%; margin-right: 1%; margin-bottom: 0.5em;"></a>
+<a href="cfp_over_time/configurator_footprint7.png" data-lightbox="['test_cave_smac/cfp_over_time/configurator_footprint0.png', 'test_cave_smac/cfp_over_time/configurator_footprint1.png', 'test_cave_smac/cfp_over_time/configurator_footprint2.png', 'test_cave_smac/cfp_over_time/configurator_footprint3.png', 'test_cave_smac/cfp_over_time/configurator_footprint4.png', 'test_cave_smac/cfp_over_time/configurator_footprint5.png', 'test_cave_smac/cfp_over_time/configurator_footprint6.png', 'test_cave_smac/cfp_over_time/configurator_footprint7.png', 'test_cave_smac/cfp_over_time/configurator_footprint8.png', 'test_cave_smac/cfp_over_time/configurator_footprint9.png']" data-title="cfp_over_time/configurator_footprint7.png"><img src="cfp_over_time/configurator_footprint7.png" alt="Plot missing - is phantomjs installed? Check CAVEs FAQ for infos." style="float: left; width: 9%; margin-right: 1%; margin-bottom: 0.5em;"></a>
+<a href="cfp_over_time/configurator_footprint8.png" data-lightbox="['test_cave_smac/cfp_over_time/configurator_footprint0.png', 'test_cave_smac/cfp_over_time/configurator_footprint1.png', 'test_cave_smac/cfp_over_time/configurator_footprint2.png', 'test_cave_smac/cfp_over_time/configurator_footprint3.png', 'test_cave_smac/cfp_over_time/configurator_footprint4.png', 'test_cave_smac/cfp_over_time/configurator_footprint5.png', 'test_cave_smac/cfp_over_time/configurator_footprint6.png', 'test_cave_smac/cfp_over_time/configurator_footprint7.png', 'test_cave_smac/cfp_over_time/configurator_footprint8.png', 'test_cave_smac/cfp_over_time/configurator_footprint9.png']" data-title="cfp_over_time/configurator_footprint8.png"><img src="cfp_over_time/configurator_footprint8.png" alt="Plot missing - is phantomjs installed? Check CAVEs FAQ for infos." style="float: left; width: 9%; margin-right: 1%; margin-bottom: 0.5em;"></a>
+<a href="cfp_over_time/configurator_footprint9.png" data-lightbox="['test_cave_smac/cfp_over_time/configurator_footprint0.png', 'test_cave_smac/cfp_over_time/configurator_footprint1.png', 'test_cave_smac/cfp_over_time/configurator_footprint2.png', 'test_cave_smac/cfp_over_time/configurator_footprint3.png', 'test_cave_smac/cfp_over_time/configurator_footprint4.png', 'test_cave_smac/cfp_over_time/configurator_footprint5.png', 'test_cave_smac/cfp_over_time/configurator_footprint6.png', 'test_cave_smac/cfp_over_time/configurator_footprint7.png', 'test_cave_smac/cfp_over_time/configurator_footprint8.png', 'test_cave_smac/cfp_over_time/configurator_footprint9.png']" data-title="cfp_over_time/configurator_footprint9.png"><img src="cfp_over_time/configurator_footprint9.png" alt="Plot missing - is phantomjs installed? Check CAVEs FAQ for infos." style="float: left; width: 9%; margin-right: 1%; margin-bottom: 0.5em;"></a>
+<p style="clear: both;"></div>
+</div></div><div class="accordion">Parallel Coordinates <div class="help-tip"><p>Previously used by Golovin et al.  to study the frequency of chosen parameter settings in black-box-optimization.  Each line corresponds to one configuration in the runhistory and shows the parameter settings and the corresponding (estimated) average cost. To handle large configuration spaces with hundreds of parameters, the (at most) 10 most important parameters based on a fANOVA parameter importance analysis are plotted.  To emphasize better configurations, the performance is encoded in the color of each line, ranging from blue to red. These plots provide insights into whether the configurator focused on specific parameter values and how these correlate to their costs.  NOTE: the given runhistory should contain only optimization and no validation to analyze the explored parameter-space.  </p></div></div>
+<div class="panel">
+<div align="center">
+<a href="parallel_coordinates_linear_cost_log_sampling_50.png" data-lightbox="['test_cave_smac/parallel_coordinates_linear_cost_log_sampling_50.png']" data-title="parallel_coordinates_linear_cost_log_sampling_50.png"><img src="parallel_coordinates_linear_cost_log_sampling_50.png" alt="Plot missing - is phantomjs installed? Check CAVEs FAQ for infos." style="float: left; width: 99%; margin-right: 1%; margin-bottom: 0.5em;"></a>
+<p style="clear: both;"></div>
+</div></div><div class="accordion">Parameter Importance <div class="help-tip"><p>
+Parameter Importance analysis to determine
+which of the parameters most influence the
+analysed algorithms performance.</p></div></div>
+<div class="panel">
+<div class="accordion">Importance Table <div class="help-tip"><p>Parameters are initially sorted by average. Only parameters with an importance greater than 5 in any of the methods are shown.  Note, that the values of the used methods are not directly comparable. For more information on the metrics, see respective tooltips.</p></div></div>
+<div class="panel">
+<div align="center">
+
+<div class="bk-root" id="a5508bb4-a4d7-47da-8dac-22d61e67ad7e" data-root-id="1005"></div>
+</div>
+</div><div class="accordion">fANOVA <div class="help-tip"><p>fANOVA (functional analysis of variance) computes the fraction of the variance in the cost space explained by changing a parameter by marginalizing over all other parameters, for each parameter (or for pairs of parameters). Parameters with high importance scores will have a large impact on the performance.  To this end, a random forest is trained as an empirical performance model on the available empirical data from the available runhistories.</p></div></div>
+<div class="panel">
+<div class="accordion">Importance </div>
+<div class="panel">
+<div style="overflow-x: auto" align="center">
+<table border="1" class="dataframe">
+  <tbody>
+    <tr>
+      <th>-------------------- Single importance: --------------------</th>
+      <td>--------------------</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>100.0 +/- 0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div><div class="accordion">Marginals </div>
+<div class="panel">
+<div class="accordion">C </div>
+<div class="panel">
+<div align="center">
+<a href="content/fanova/C.png" data-lightbox="content/fanova/C.png" data-title="content/fanova/C.png"><img src="content/fanova/C.png" alt="Plot missing - is phantomjs installed? Check CAVEs FAQ for infos." width="600px"></a>
+</div>
+</div></div></div><div class="accordion">Local Parameter Importance (LPI) <div class="help-tip"><p>Using an empirical performance model, performance changes of a configuration along each parameter are calculated. To quantify the importance of a parameter value, the variance of all cost values by changing that parameter are predicted and then the fraction of all variances is computed. This analysis is inspired by the human behaviour to look for improvements in the neighborhood of individual parameters of a configuration.</p></div></div>
+<div class="panel">
+<div class="accordion">C </div>
+<div class="panel">
+<div align="center">
+<a href="content/lpi/C.png" data-lightbox="content/lpi/C.png" data-title="content/lpi/C.png"><img src="content/lpi/C.png" alt="Plot missing - is phantomjs installed? Check CAVEs FAQ for infos." width="600px"></a>
+</div>
+</div></div></div>
+</div>
+<footer>
+    <div class='l-wrapper'>
+        Generated by <a href="https://github.com/automl/CAVE">CAVE v1.1.8</a> and developed by
+        <a href="http://www.automl.org">autoML</a> | Optimized for Chrome and Firefox
+    </div>
+</footer>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("show");
+  }
+}
+</script>
+<script src="html/js/back-to-top.js"></script>
+</body>
+</html>
